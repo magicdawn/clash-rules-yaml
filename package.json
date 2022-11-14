@@ -1,0 +1,53 @@
+{
+  "name": "clash-rules-yaml",
+  "version": "0.0.1",
+  "description": "clash rules yaml",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "prepare": "husky install",
+    "test-cover": "nyc --reporter=lcov --reporter=text mocha",
+    "report-cover": "codecov",
+    "build": "rm -rf lib; rm tsconfig.tsbuildinfo; tsc",
+    "prepublishOnly": "npm run build",
+    "start": "ts-node ./src/index.ts",
+    "start:debug": "node --inspect-brk -r ts-node/register ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magicdawn/clash-rules-yaml.git"
+  },
+  "keywords": [
+    "clash",
+    "rules"
+  ],
+  "author": "magicdawn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magicdawn/clash-rules-yaml/issues"
+  },
+  "homepage": "https://github.com/magicdawn/clash-rules-yaml#readme",
+  "devDependencies": {
+    "@magicdawn/prettier-config": "^0.0.2",
+    "@swc/core": "^1.3.16",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0",
+    "prettier": "^2.7.1",
+    "should": "^13.2.3",
+    "typescript": "^4.8.4",
+    "@swc/helpers": "^0.4.12",
+    "ts-node": "^10.9.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,md}": [
+      "prettier --write"
+    ]
+  }
+}
