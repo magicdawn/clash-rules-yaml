@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-  schedule:
-    # 4PM, that's 12PM in GMT+8
-    - cron: '0 16 * * *'
+  # schedule:
+  # 4PM, that's 12PM in GMT+8
+  # - cron: '0 16 * * *'
 
 jobs:
   unit-test:
